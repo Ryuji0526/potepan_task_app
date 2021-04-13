@@ -1,0 +1,22 @@
+= provide(:title, "詳細 ")
+
+h1 スケジュール詳細
+
+.main-container
+  tabel.table
+    tbody
+      tr
+        th= Task.human_attribute_name(:title)
+        td= @task.title
+      tr
+        th= Task.human_attribute_name(:start_date)
+        td= @task.start_date
+      tr
+        th= Task.human_attribute_name(:title)
+        td= @task.id
+      tr
+        th= Task.human_attribute_name(:title)
+        td= @task.id
+      tr
+        th= Task.human_attribute_name(:title)
+        td= @task.id

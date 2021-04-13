@@ -2,11 +2,8 @@
 
 h1 スケジュール詳細
 
-nav.top_nav
-  = link_to '一覧', tasks_path,class: 'btn btn_index'
-
 .main-container
-  table.table
+  tabel.table
     tbody
       tr
         th= Task.human_attribute_name(:title)
@@ -25,11 +22,4 @@ nav.top_nav
           td
       tr
         th= Task.human_attribute_name(:description)
-        td= simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div")
-
-nav.end_nav
-  ul
-    li.nav_list
-      =link_to '編集', edit_task_path(@task),class: 'btn edit_btn'
-    li.nav_list
-      =link_to '削除', task_path(@task),class: 'btn delete_btn'
+        td= simple_format(h(@task.description), {}, santize)

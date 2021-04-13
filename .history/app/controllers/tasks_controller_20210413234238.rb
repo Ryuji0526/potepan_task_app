@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+    @tasks = Tas
   end
 
   def new
@@ -20,14 +20,9 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def update
-    @task = Task.find(params[:id])
-    @task.update!(task_params)
-    flash[:success] = "タスク「#{@task.title}」を更新しました。"
-    redirect_to tasks_url
   end
 
   def destroy

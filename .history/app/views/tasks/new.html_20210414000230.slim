@@ -1,9 +1,9 @@
-= provide(:title, "編集 ")
+= provide(:title, "新規作成 ")
 
-h1 スケジュール編集
+h1 新規作成
 
 nav.top_nav
-  = link_to '一覧', tasks_path,class: 'btn btn_index'
+  = link_to '一覧', tasks_path
 
 .main_container
   = form_with model: @task, local:true do |f|
@@ -35,4 +35,6 @@ nav.top_nav
             = f.label :description
           td
             = f.text_area :description, class: 'form_input', id: 'task_title'
-    = f.submit 'スケジュールを更新する', class:'btn btn_primary'
+    = f.submit 'スケジュールを新規登録する', class:'btn btn_primary'
+
+

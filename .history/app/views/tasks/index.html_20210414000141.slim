@@ -3,7 +3,7 @@
 h1 スケジュール一覧
 
 nav.top_nav
-  = link_to '新規登録', new_task_path, class: 'btn btn_new'
+  = link_to '新規登録', new_task_path
 
 
 .main_container
@@ -17,8 +17,7 @@ nav.top_nav
         th= Task.human_attribute_name(:all_day)
         th= Task.human_attribute_name(:updated_at)
         th 確認
-        th 編集
-        th 削除
+        th
     tbody.tbody
       - @tasks.each do |task|
         tr
@@ -31,7 +30,6 @@ nav.top_nav
           - else
             td
           td= task.updated_at
-          td= link_to '確認', task_path(task), class: 'btn btn_check'
-          td= link_to '編集', edit_task_path(task), class: 'btn btn_edit'
-          td= link_to '削除', edit_task_path(task), class: 'btn btn_edit'
+          td= link_to '確認', task_path(task)
+          td= link_to '編集', edit_task_path(task)
 

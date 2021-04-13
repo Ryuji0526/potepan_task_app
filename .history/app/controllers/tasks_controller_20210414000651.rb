@@ -24,10 +24,6 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
-    @task.update!(task_params)
-    flash[:success] = "タスク「#{@task.title}」を更新しました。"
-    redirect_to tasks_url
   end
 
   def destroy
