@@ -1,0 +1,29 @@
+= provide(:title, "新規作成")
+
+h1 新規作成
+
+.link
+  = link_to 'スケジュール一覧に戻る', tasks_path
+
+= form_with model: @task, local:true do |f|
+  tr
+    th
+      = f.label :title
+    td
+      = f.text_field :title, class: 'form-input', id: 'task_title'
+  tr
+    th
+      = f.label :start_date
+    td
+      = f.datetime_field :start_date, class: 'form_calendar' id: 'task_start_date'
+  tr
+    th
+      = f.label :end_date
+    td
+      = f.datetime_field :end_date, class: 'form_calendar' id: 'task_start_date'
+  tr
+    th
+      = f.label :all_day
+      
+
+

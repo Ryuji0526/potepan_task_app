@@ -1,0 +1,21 @@
+= provide(:title, "一覧")
+
+h1 スケジュール一覧
+
+= link_to '新規登録', new_task_path
+
+.tasks_container
+  table.table
+    thead.thead
+      tr
+        th= Task.human_attribute_name(:id)
+        th= Task.human_attribute_name(:title)
+        th= Task.human_attribute_name(:start_date)
+        th= Task.human_attribute_name(:end_date)
+        th= Task.human_attribute_name(:a)
+        th= Task.human_attribute_name(:title)
+        th
+        th
+    tbody.tbody
+      - @tasks.each do |task|
+
