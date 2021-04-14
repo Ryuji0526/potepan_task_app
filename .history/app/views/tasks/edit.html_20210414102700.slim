@@ -1,0 +1,8 @@
+= provide(:title, "編集 ")
+
+h1 スケジュール編集
+
+nav.top_nav
+  = link_to '一覧', tasks_path,class: 'btn btn_index'
+
+=render partial: 'form', locals: {btn: '登録'}

@@ -1,0 +1,34 @@
+= provide(:title, "詳細 ")
+
+h1 スケジュール詳細
+
+nav.top_nav
+  = link_to '一覧', tasks_path,class: 'btn btn_blue'
+
+table.table
+  tbody
+    tr.title_table
+      th= Task.human_attribute_name(:title)
+      td= @task.title
+    tr
+      th= Task.human_attribute_name(:start_date)
+      td= @task.start_date
+    tr
+      th= Task.human_attribute_name(:end_date)
+      td= @task.end_date
+    tr
+      th= Task.human_attribute_name(:all_day)
+      - if @task.all_day?
+        td ○
+      - else
+        td
+    tr
+      th= Task.human_attribute_name(:description)
+      td= simple_format(h(@task.description), {}, sanitize: false, wrapper_tag: "div")
+
+nav.end_nav
+ul
+  li.nav_list
+    =link_to '編集', edit_task_path(@task),class: 'btn btn_blue'
+  li.nav_list
+    =link_to '削除', @task, method: :delete, data: { confirm: "タスク「#{@task.title}」を削除します。よろしいですか？"},  class: 'btn btn_red'

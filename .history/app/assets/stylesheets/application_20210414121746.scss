@@ -1,0 +1,41 @@
+/* 全体 */
+*{
+  padding: 0;
+  margin: 0;
+  h1{
+    font-size: 2em;
+  }
+  .bg_tomato{
+    background: #AAD6EC;
+  }
+}
+
+body{
+  .header_container,.footer_container{
+    color: #fff;
+    padding:30px 20px;
+  }
+  main{
+    h1{
+      color: #AAD6EC;
+    }
+    .main_container{
+      width: 95%;
+      padding: 40px 0;
+      margin: 0 auto;
+    }
+  }
+}
+
+/* form */
+table{
+  background: #EEF9FF;
+  border-collapse: collapse;
+  th{
+    
+  }
+  th,td{
+    color: #AAD6EC;
+    border: solid 1px #ccc;
+  }
+}

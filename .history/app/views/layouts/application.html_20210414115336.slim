@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title
+      = yield(:title) 
+      | | TaskApp
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    header
+      .header_container.bg_tomato
+        Ruby on Rails スケジュール管理アプリ
+    main
+      - flash.each do |message_type,message|
+        = content_tag(:div, message, class: "alert alert-#{message_type}")
+      .main_container
+        = yield
+    footer
+      .footer_container.bg_tomato
+        h1
+          = "現在の日時 : #{Date.today} | スケジュール合計 : #{Task.count}"
